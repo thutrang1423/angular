@@ -35,9 +35,9 @@ export class AppComponent //export class parentComponent
 
   currentItem = 'Television';//input
 
-  items=['item1','item2'];
-  addItem(newItem:string){
-    this.items.push(newItem);
+  items=['item1','item2']; //output
+  addItem(newItem:string){ //output
+    this.items.push(newItem); //output
   }
 }
 
