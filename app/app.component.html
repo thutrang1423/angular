@@ -47,7 +47,7 @@
 
 <app-lifecycle></app-lifecycle>
 <app-text></app-text>
-<app-child-component [item]="currentItem"></app-child-component>
+<app-child-component [item]="currentItem"></app-child-component> <--input-->
 <app-child-component (newItemEvent)="addItem($event)"></app-child-component>
 <ul>
   <li *ngFor="let item of items">{{item}}</li>
