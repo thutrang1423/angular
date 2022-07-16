@@ -5,7 +5,8 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent //export class parentComponent
+{
   title = 'Hello App';
   welcome = 'Hello Angular, I am from to the fasttrack Academy';
 
@@ -32,7 +33,7 @@ export class AppComponent {
   // Style binding được sử dụng để liên kết dữ liệu từ thành phần vào thuộc tính style HTML 
   myColor="green"
 
-  currentItem = 'Television';
+  currentItem = 'Television';//input
 
   items=['item1','item2'];
   addItem(newItem:string){
