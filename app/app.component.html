@@ -1,0 +1,164 @@
+<!-- directive css -->
+<div class="vd1">
+  <h2 [ngClass]="color ? 'red':'blue'">Cao đẳng VetUc</h2> 
+  <button (click)="change()">Change color</button>
+</div>
+
+<br><br>
+
+<!-- directive - ngStyle -->
+<div class="vd2">
+  <div [ngStyle]="{backgroundColor: color ?'yellow': 'transparent'}">
+    Using directive ngStyle
+  </div>
+  <button (click)="change()">Change color</button>
+</div>
+
+<br><br>
+
+<!-- ngtemplate -->
+<p>Hip!</p>
+<ng-template>
+  <p>Hip!</p>
+</ng-template>
+<p>Hoopray!</p>
+
+<br><br>
+
+<!-- khồng sử dụng ng-container -->
+<p>
+  I turned the corner
+  <span *ngIf="hero">
+    and saw {{hero}}. I waved
+  </span>
+  and countinued on my way
+</p>
+<!-- sử dụng ng-container -->
+<p>
+  I turned the corner
+  <ng-container *ngIf="hero">
+    and saw {{hero}}.I waved
+  </ng-container>
+  and countinued on my way.
+</p>
+
+<br><br>
+
+<!-- ngIf -->
+<p *ngIf="Condition"> <!--true-->
+  các thẻ html sẽ được hiển thị nếu điều kiện là đúng
+</p>
+<p [hidden]="condition2">
+  content to render, when the condition is true
+</p>
+<p *ngIf="!Condition"> <!--false-->
+  content to render, when the condition is false
+</p>
+
+<br><br>
+
+<!-- sử dụng if..else trong ngIf -->
+<div *ngIf="condition; else elseBlock">
+  content to render, when the condition is true
+</div>
+<ng-template #elseBlock>
+  content to render, when the condition is false
+</ng-template>
+<button (click)="changeCondition()">Change condition</button>
+
+<br><br>
+<!-- sử dụng then..else trong ngIf -->
+<div *ngIf="condition1; then thenBlock else elseBlock">
+  This content is not shown
+</div>
+<ng-template #thenBlock>
+  content to render when the condition is true.
+</ng-template>
+<ng-template #elseBlock>
+  content to render when condition is false
+</ng-template><br>
+<button (click)="changeCondition1()">Change condition</button>
+
+<br><br><br>
+
+<!-- thuộc tính showInfo caption -->
+<div>
+  <button type="button" (click)="changeData()">{{caption}}</button>
+  <br />
+  <h2 *ngIf="showInfo"><span>Thể hiện chỉ thị cấu trúc với - *ngIf</span></h2>
+</div>
+
+<br><br>
+
+<!-- ngFor -->
+<div>
+  <h2>Product list using ngFor</h2>
+  <ul>
+    <li *ngFor="let product of productList"><!--thêm: ;let i:index-->
+      {{product}}
+    </li>
+  </ul>
+</div>
+
+<div>
+  <h2>bảng cửu chương của <input type="text" [(ngModel)]="thuaSo1"></h2>
+  <div>
+    <table border="1px">
+      <tr *ngFor="let thuaSo2 of numberList">
+        <td>{{thuaSo1}}</td>
+        <td>x</td>
+        <td>{{thuaSo2}}</td>
+        <td>=</td>
+        <td>{{thuaSo1*thuaSo2}}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<br><br>
+
+<!-- phép tính cộng -->
+số hạng 1 <input type="text" #sh1> <br>
+số hạng 2 <input type="text" #sh2> <br>
+<button (click)="getValue(sh1.value, sh2.value)"> = </button>
+kết quả <input type="text" [(ngModel)]="tong">
+
+<br><br><br>
+
+<!-- ngSwitch -->
+<table border="1px">
+  <tr><th>Name</th><th>graded</th></tr>
+  <tr *ngFor="let student of listStudent" [ngSwitch]="student.graded">
+    <td>
+      <span *ngSwitchCase="'A'" [ngStyle]="{color:'red'}">{{student.name}}</span>
+      <span *ngSwitchCase="'B'" [ngStyle]="{color:'green'}">{{student.name}}</span>
+      <span *ngSwitchCase="'C'" [ngStyle]="{color:'blue'}">{{student.name}}</span>
+    </td>
+    <td>
+      <span *ngSwitchCase="'A'" [ngStyle]="{color:'red'}">{{student.graded}}</span>
+      <span *ngSwitchCase="'B'" [ngStyle]="{color:'green'}">{{student.graded}}</span>
+      <span *ngSwitchCase="'C'" [ngStyle]="{color:'blue'}">{{student.graded}}</span>
+    </td>
+  </tr>
+</table>
+
+<br><br>
+
+<p>Số ngày mỗi tháng:</p>
+<div border="1px">
+  <input type="text" [(ngModel)]="thang">
+  <div [ngSwitch]="thang">
+    <span *ngSwitchCase="1">tháng có 31 ngày</span>
+    <span *ngSwitchCase="2">tháng có 28 hoặc 29 ngày</span>
+    <span *ngSwitchCase="3">tháng có 31 ngày</span>
+    <span *ngSwitchCase="4">tháng có 30 ngày</span>
+    <span *ngSwitchCase="5">tháng có 31 ngày</span>
+    <span *ngSwitchCase="6">tháng có 30 ngày</span>
+    <span *ngSwitchCase="7">tháng có 31 ngày</span>
+    <span *ngSwitchCase="8">tháng có 30 ngày</span>
+    <span *ngSwitchCase="9">tháng có 31 ngày</span>
+    <span *ngSwitchCase="10">tháng có 30 ngày</span>
+    <span *ngSwitchCase="11">tháng có 31 ngày</span>
+    <span *ngSwitchCase="12">tháng có 30 ngày</span>
+  </div>
+</div>
