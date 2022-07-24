@@ -1,0 +1,19 @@
+<!-- color-cshange -->
+  <h1>My first Attribute Directive</h1>
+  <h2>Pick a highlight color </h2>
+  <div>
+    <input type="radio" name="colors" (click)="color='lightgreen'">Green
+    <input type="radio" name="colors" (click)="color='yellow'">Yellow
+    <input type="radio" name="colors" (click)="color='cyan'">Cyan
+  </div>
+  <p [colorchange]="color">Hightlight me!</p>
+
+  <br><br><br>
+
+  <!-- Unless -->
+  <div *appUnless="false">
+    Đoạn này được hiển thị vì điều kiện sai
+  </div>
+  <div *appunless="true">
+    Đoạn này không được hiển thị vì điều kiện đúng
+  </div>
