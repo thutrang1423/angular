@@ -1,0 +1,26 @@
+<div class="inform">Server name</div>
+<input type="text" #name>
+
+<div class="inform">Server content</div>
+<input type="text" #content>
+
+
+<div class="btn">
+  <button (click)="themServer(name.value, content.value)">Add Server</button>
+  <button (click)="themServerBlue(name.value, content.value)">Add Blue Server</button>
+</div>
+
+
+
+<p>Test server</p>
+
+<ul>
+    <li *ngFor="let s of servers" [ngStyle]="{color:s.type=='serverBlue' ? 'blue' : 'red'}" class="khung">
+      <span class="titleItem">
+        {{s.name}}
+      </span>
+      <span>
+        {{s.content}}
+      </span>
+    </li>
+</ul>
