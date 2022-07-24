@@ -1,0 +1,14 @@
+/* directive css / ngStyle*/
+.red{
+    color:red;
+}
+.blue{
+    color:blue;
+}
+
+
+/* ng-container */
+p span {
+    color: red;
+    font-size: 70%;
+}
