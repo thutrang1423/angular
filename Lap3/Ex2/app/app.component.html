@@ -1,0 +1,12 @@
+<p>Số tương ứng với thứ</p>
+<div border="1px">
+  <input type="text" [(ngModel)]="thu">
+  <div [ngSwitch]="thu">
+    <span *ngSwitchCase="1">chủ nhật</span>
+    <span *ngSwitchCase="2">thứ 2</span>
+    <span *ngSwitchCase="3">thứ 3</span>
+    <span *ngSwitchCase="4">thứ 4</span>
+    <span *ngSwitchCase="5">thứ 5</span>
+    <span *ngSwitchCase="6">thứ 6</span>
+    <span *ngSwitchCase="7">thứ 7</span>
+  </div>
