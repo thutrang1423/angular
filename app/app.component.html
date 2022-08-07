@@ -1,0 +1,26 @@
+<p>{{title}}</p>
+<p>
+  Today's Date: {{myDate.getDate()+"Tháng "+myDate.getMonth()+" Năm "+myDate.getFullYear()}}
+</p>
+
+<h1><strong>Services </strong>Demo
+<button type="button" (click)="getProducts()">Get Products</button>
+<div>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products;">
+        <td>{{product.productID}}</td>
+        <td>{{product.name}}</td>
+        <td>{{product.price}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</h1>
