@@ -5,7 +5,7 @@ import { DemoService } from '../demo.service';
   selector: 'app-parent',
   templateUrl: './parent.component.html',
   styleUrls: ['./parent.component.css'],
-  providers: [DemoService] //import demoservice vào parent 
+  providers: [DemoService] //import để tách 2 hoạt động của service
 })
 export class ParentComponent implements OnInit {
 
