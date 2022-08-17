@@ -1,0 +1,18 @@
+<h2>Angular Routing App</h2>
+<ul class="nav nav-pills card-header-pills">
+  <li class="nav-item">
+    <a href="" routerLink="/first-component" class="nav-link">First Component</a>
+  </li>
+  <li class="nav-item">
+    <a href="" routerLink="/second-component" class="nav-link">Second Component</a>
+  </li>
+
+  <li class="nav-item">
+    <!-- lấy giá trị đối số khi truyền theo URL -->
+    <a class="nav-link" href="" [routerLink]="['/contactus','001','Uyên']">Contact Us</a> 
+    <!-- cách truyền dữ liệu 2 -->
+    <!-- <a class="nav-link" [routerLink]="['/contactus']" [queryParams]="{id:'002',ten:'Vy'}">Contact Us</a> -->
+  </li>
+</ul>
+
+<router-outlet></router-outlet>
