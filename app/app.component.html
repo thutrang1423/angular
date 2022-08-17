@@ -1,0 +1,23 @@
+<body>
+  <!-- tách và tạo module main -->
+  <ul>
+    <li><a routerLink="/" class="active">Home</a></li>
+    <li><a routerLink="/contactus">Contact</a></li>
+    <li><a routerLink="/aboutus">About</a></li>
+  </ul>
+
+  <div style="text-align: center; font-weight: bolder; font-size: 50px">
+    <router-outlet></router-outlet>
+  </div>
+
+<!-- Lazy loading tạo các module và chỉ chạy khi được chỉ định để tạo hiệu suất chạy nhanh hơn gồm customer và order-->
+  <div class="contain">
+    <h2>Lazy loading routing</h2>
+    <button routerLink="/customers">Customers</button>
+    <button routerLink="/orders">Orders</button>
+    <button routerLink="">Home</button>
+    <router-outlet></router-outlet>
+  </div>
+</body>
+
+
