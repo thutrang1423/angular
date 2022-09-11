@@ -1,0 +1,70 @@
+<h2>Using pipe Transform data</h2>
+<p>The hero's birthday is {{birthday | date}}</p>
+
+<!-- 2 -->
+<!-- chuyển đổi format -->
+<p>The hero's birthday is {{birthday|date:format}}</p>
+<button (click)="toggleFormat()">Toggle format</button>
+
+<!-- 3 -->
+<p>The hero's birthday is {{birthday|date:format | uppercase}}</p>
+<button (click)="toggleFormat()">Toggle format</button>
+
+<h3>Using pipe transform data</h3>
+<div style="text-align:center">
+    <h1>
+        <b>{{Name | uppercase}}</b>
+    </h1>
+</div>
+
+<div style="width:40%; float:left; border:solid 1px black;">
+    <h1>Lowercase Pipe</h1>
+    <b>{{Name|lowercase}}</b>
+    <h1>Currency Pipe</h1>
+    <b>{{6589.23 | currency:"USD"}}</b>
+    <br>
+
+    <b>{{6589.23 | currency:"USD"}}</b>
+    //Boolean true đươc sử dụng để lấy ký hiệu của tiền tệ.
+    <h1>Date pipe</h1>
+    <b>{{birthday | date:'dd/MM/yyyy'}}</b>
+    <br>
+
+    <b>{{birthday | date:'shortTime'}}</b>
+
+    <h1>Decimal Pipe</h1>
+    <div>{{value | number}}</div>
+    <div>{{value | number:'2.1-4'}}</div>
+    <div>{{value1 | number:'2.1-4'}}</div>
+    <div>{{value2 | number:'2.1-4'}}</div>
+
+    <div>
+        <h1>Json Pipe</h1>
+        <b>{{jsonData | json}}</b>
+
+        <h1>Percent Pipe</h1>
+        <b>{{00.54565 | percent}}</b>
+
+        <h1>Slice Pipe</h1>
+        <b>{{months | slice:2:6}}</b>here 2 and 6 refers to the start and the end 
+    </div>
+
+    <div>
+        <p>Birthday is {{birthday | date:format|uppercase}}</p>
+        <button (click)="toggleFormat()">toggleFormat</button>
+    </div>
+
+</div>
+<br>
+
+
+<div>
+    <h1 class="inbox-title">{{Name|show}}</h1>
+  </div>
+  <div>
+    <h2>Custom Pipe</h2>
+    <b>Căn bậc 2 của 25 là: {{25|sqrt}}</b>
+    <br>
+    <b>Căn bậc hai của 729 là: {{729|sqrt}}</b>
+</div>
+
