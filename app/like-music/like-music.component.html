@@ -1,0 +1,24 @@
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Bài hát</th>
+            <th scope="col">Ca sĩ</th>
+            <th scope="col">Thể loại</th>
+            <th scope="col">Nghe</th>
+            <th scope="col">Add</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let music of dataMusics">
+            <td>{{music.id}}</td>
+            <td>{{music.song}}</td>
+            <td><a href="" class="nav-link text-w btn-dark" routerLink="/singer-list/{{music.singer}}">{{music.singer}}</a></td>
+            <td><a href="" class="nav-link text-w btn-dark" routerLink="/style-list/{{music.style}}">{{music.style}}</a></td>
+            <td> <a href="{{music.link}}"><button>Nghe</button></a></td>
+            <td>
+                <button class="btn btn-success" (click)="remove(music.id)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table> 
