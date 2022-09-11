@@ -1,0 +1,29 @@
+<div class="form-group">
+    <label for="">Name</label>
+    <input type="text" [formControl]="name" >
+</div>
+
+<div *ngIf="name?.invalid && (name?.dirty || name?.touched)"
+        class="alert alert-danger">
+        <div *ngIf="name?.errors?.['required']">
+            Name is required
+        </div>
+        <div *ngIf="name?.errors?.['minlength']">
+            Name minimum character length 4
+        </div>
+        <div *ngIf="name?.errors?.['maxlength']">
+            Name maximum character length 20
+        </div>
+    </div>
+
+<div class="form-group">
+    <label for="">Pass</label>
+    <input type="text" [formControl]="pass" >
+</div>
+
+<p>
+    <button class="btn btn-primary" (click)="updateName()">Update name</button>
+</p>
+
+<p>Value name: {{name.value}}</p>
+<p>Value pass: {{pass.value}}</p>

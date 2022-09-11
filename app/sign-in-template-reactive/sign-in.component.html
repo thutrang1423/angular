@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            <form novalidate class="sign-in-form" #signInForm="ngForm" (submit)="onSubmit(signInForm)">
+                <h2>Sign-in</h2>
+                <div class="form-group">
+                    <label for="idName">Username</label>
+                    <!-- <input type="text" class="form-control" required minlength="4" id="idName" name="userName" #userName="ngModel"> -->
+                </div>
+                <!-- <div *ngIf="userName?.invalid && (userName?.dirty || userName?.touched)" class="alert alert-danger">
+                    <div *ngIf="userName?.errors?.['required']">
+                        username is required
+                    </div>
+                    <div *ngIf="userName?.errors?.['minlength']">
+                        length of username is least of 5 character
+                    </div>
+                </div> -->
+                <div class="form-group">
+                    <label for="">Password</label>
+                    <input type="text" class="form-control" ngModel name="password">
+                </div>
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input">
+                    <label class="form-check-label">Check me out</label>
+                </div>
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
